@@ -14,11 +14,26 @@ var express = require("express");
 
 var app = express();
 
+/*var Square = require("./module");
+var mySquareObject = new Square(5);
+
+function main(){
+    console.log(mySquareObject.getArea());
+}
+main();
+
 app.get("/", function (req, res) {
     res.send("<h1>Hello world<h1>");
 });
+*/
 
+//localhost:3000/google
 
+app.use(express.static("public"));
+
+app.get("/", function(req, res){
+    res.redirect('index.html');
+});
 
 app.get("/google", function (req, res) {
     res.redirect('https://www.google.am');
